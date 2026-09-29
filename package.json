@@ -1,0 +1,19 @@
+{
+  "name": "tubedown",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c cyan,green \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "npm run dev --workspace tubedown-frontend",
+    "dev:backend": "npm run dev --workspace tubedown-backend",
+    "build:frontend": "npm run build --workspace tubedown-frontend",
+    "build:backend": "npm run build --workspace tubedown-backend",
+    "typecheck:frontend": "npm run typecheck --workspace tubedown-frontend",
+    "typecheck:backend": "npm run typecheck --workspace tubedown-backend"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
